@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util.xsd">
+	
+	
+	<!-- Standalone-List -->
+	<util:list list-class="java.util.LinkedList" id="myFriends" >
+		<value>Akash</value>
+		<value>Vikash</value>
+		<value>Paman</value>
+		<value>Baman</value>
+	</util:list>
+	
+	
+	<!-- Standalone-Map -->
+	<util:map map-class="java.util.TreeMap" id="course">
+		<entry key="Java" value="5000" />
+		<entry key="Python" value="8000" />
+		<entry key="C++" value="3000" />
+	
+	</util:map>
+	<bean class="com.springcore.StandAloneCollections.Person"
+		name="person">
+		<!-- <property name="friends">
+			<ref bean="myFriends"/>
+		</property> -->
+		<property name="friends" ref="myFriends" />
+		<property name="courses" ref="course"></property>
+	</bean>
+
+
+</beans>
